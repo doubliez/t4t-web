@@ -1,0 +1,297 @@
+#markers {
+    width: 0;
+    height: 0;
+}
+
+.axis path,
+.axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+    vector-effect: non-scaling-stroke;
+}
+
+.axis text {
+    font-size: .9em;
+}
+
+.line {
+    fill: none;
+    stroke-width: 1.5px;
+    vector-effect: non-scaling-stroke;
+}
+
+.ref-line {
+    fill: none;
+    stroke: black;
+    stroke-width: 1.5px;
+    vector-effect: non-scaling-stroke;
+}
+
+.histo-title {
+    font-weight: bold;
+}
+
+.bin, .bin-edge {
+    stroke-width: 1.5px;
+    vector-effect: non-scaling-stroke;
+}
+
+.bin-0, .bin-edge-0 {
+    stroke: #1f77b4;
+}
+
+.bin-1, .bin-edge-1 {
+    stroke: #ff7f0e;
+}
+
+.bin-2, .bin-edge-2 {
+    stroke: #2ca02c;
+}
+
+.bin-3, .bin-edge-3 {
+    stroke: #d62728;
+}
+
+.bin-4, .bin-edge-4 {
+    stroke: #9467bd;
+}
+
+.bin-5, .bin-edge-5 {
+    stroke: #8c564b;
+}
+
+.bin-6, .bin-edge-6 {
+    stroke: #e377c2;
+}
+
+.bin-7, .bin-edge-7 {
+    stroke: #7f7f7f;
+}
+
+.bin-8, .bin-edge-8 {
+    stroke: #bcbd22;
+}
+
+.bin-9, .bin-edge-9 {
+    stroke: #17becf;
+}
+
+.ref-bin, .ref-bin-edge {
+    stroke: black;
+    stroke-width: 1.5px;
+    vector-effect: non-scaling-stroke;
+}
+
+.bin-edge, .ref-bin-edge {
+    stroke-width: 1px;
+}
+
+.bin-mid {
+    vector-effect: non-scaling-stroke;
+}
+
+.bin-mid-0 {
+    fill: #1f77b4;
+}
+
+.bin-mid-1 {
+    fill: #ff7f0e;
+}
+
+.bin-mid-2 {
+    fill: #2ca02c;
+}
+
+.bin-mid-3 {
+    fill: #d62728;
+}
+
+.bin-mid-4 {
+    fill: #9467bd;
+}
+
+.bin-mid-5 {
+    fill: #8c564b;
+}
+
+.bin-mid-6 {
+    fill: #e377c2;
+}
+
+.bin-mid-7 {
+    fill: #7f7f7f;
+}
+
+.bin-mid-8 {
+    fill: #bcbd22;
+}
+
+.bin-mid-9 {
+    fill: #17becf;
+}
+
+.ref-bin-mid {
+    fill: black;
+    vector-effect: non-scaling-stroke;
+}
+
+.area {
+    opacity: .2;
+}
+
+.ref-area {
+    fill: black;
+    opacity: .2;
+}
+
+.focus circle {
+    fill: white;
+}
+
+.focus text {
+    font-size: .75em;
+    font-weight: bold;
+}
+
+.focus-0 text {
+    fill: #1f77b4;
+}
+
+.focus-1 text {
+    fill: #ff7f0e;
+}
+
+.focus-2 text {
+    fill: #2ca02c;
+}
+
+.focus-3 text {
+    fill: #d62728;
+}
+
+.focus-4 text {
+    fill: #9467bd;
+}
+
+.focus-5 text {
+    fill: #8c564b;
+}
+
+.focus-6 text {
+    fill: #e377c2;
+}
+
+.focus-7 text {
+    fill: #7f7f7f;
+}
+
+.focus-8 text {
+    fill: #bcbd22;
+}
+
+.focus-9 text {
+    fill: #17becf;
+}
+
+.ref-focus rect {
+    fill: white;
+}
+
+.ref-focus text {
+    fill: black;
+    font-size: .75em;
+    font-weight: bold;
+}
+
+.xLabel, .yLabel {
+    font-size: .8em;
+}
+
+.chi2 {
+    font-size: .75em;
+    font-weight: bold;
+}
+
+.chi2-0 {
+    fill: #1f77b4;
+}
+
+.chi2-1 {
+    fill: #ff7f0e;
+}
+
+.chi2-2 {
+    fill: #2ca02c;
+}
+
+.chi2-3 {
+    fill: #d62728;
+}
+
+.chi2-4 {
+    fill: #9467bd;
+}
+
+.chi2-5 {
+    fill: #8c564b;
+}
+
+.chi2-6 {
+    fill: #e377c2;
+}
+
+.chi2-7 {
+    fill: #7f7f7f;
+}
+
+.chi2-8 {
+    fill: #bcbd22;
+}
+
+.chi2-9 {
+    fill: #17becf;
+}
+
+.histogram-container:not(:nth-of-type(2)) {
+    margin-top: 20px;
+}
+
+.histogram-container > h2 {
+    margin-top: 0;
+    line-height: normal;
+    font-size: 1.3em;
+    color: #c10;
+    border-bottom: 1px solid #c10;
+}
+
+.histogram-selector {
+    box-shadow: 1px 1px 4px #aaa;
+    border-radius: 3px;
+    background-color: #eee;
+    max-height: 400px;
+    overflow-y: scroll;
+}
+
+.histogram-selector > div {
+    display: inline;
+}
+
+.histogram-selector .histogram {
+    width: 33%;
+    height: 33%;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.histogram-selector .histogram:hover {
+    background-color: #f5f5f5;
+}
+
+.first-histogram > .histogram {
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/p6.png');
+    border-radius: 3px;
+    box-shadow: 1px 1px 4px #aaa;
+}

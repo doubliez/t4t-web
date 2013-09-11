@@ -1,0 +1,151 @@
+[{
+    "name": "Beams-idA",
+    "type": "select",
+    "currentValue": 2212,
+    "defaultValue": 2212,
+    "values": [[2212, "p"],
+             [-2212, "pbar"],
+             [2112, "n"],
+             [-2112, "nbar"],
+             [211, "pi⁺"],
+             [-211, "pi⁻"],
+             [111, "pi⁰"],
+             [11, "e⁻"],
+             [-11, "e⁺"],
+             [13, "mu⁻"],
+             [-13, "mu⁺"]],
+    "description": "<p>The PDG (<a href=\"http://en.wikipedia.org/wiki/Particle_Data_Group\" target=\"_blank\">Particle Data Group</a>) id code for the first incoming particle.</p> <p>For the LHC analyses run here, the colliding particles are protons, so you don't need to change this parameter (and if you do, this would produce an error saying that the beams are incompatible with the analysis, and the analysis won't run).</p>"
+},{
+    "name": "Beams-idB",
+    "type": "select",
+    "currentValue": 2212,
+    "defaultValue": 2212,
+    "values": [[2212, "p"],
+             [-2212, "pbar"],
+             [2112, "n"],
+             [-2112, "nbar"],
+             [211, "pi⁺"],
+             [-211, "pi⁻"],
+             [111, "pi⁰"],
+             [11, "e⁻"],
+             [-11, "e⁺"],
+             [13, "mu⁻"],
+             [-13, "mu⁺"]],
+    "description": "<p>The PDG (<a href=\"http://en.wikipedia.org/wiki/Particle_Data_Group\" target=\"_blank\">Particle Data Group</a>) id code for the second incoming particle.</p> <p>For the LHC analyses run here, the colliding particles are protons, so you don't need to change this parameter (and if you do, this would produce an error saying that the beams are incompatible with the analysis, and the analysis won't run).</p>"
+},{
+    "name": "Beams-eCM",
+    "type": "number",
+    "currentValue": 14000,
+    "defaultValue": 14000,
+    "minValue": 10,
+    "step": 0.01,
+    "description": "<p>The CM (centre of mass) energy for the collision.</p> <h4>How to choose this parameter?</h4> <p>Take a look at the details of an analysis (by selecting an analysis and then clicking on \"Analysis\" just above the selector). They provide a summary and a description of the analysis which give the possible energies for that analysis.</p>"
+},{
+    "name": "StringZ-aLund",
+    "type": "slider",
+    "currentValue": 0.3,
+    "defaultValue": 0.3,
+    "minValue": 0.0,
+    "maxValue": 2.0,
+    "step": 0.01,
+    "description": "<p>Parameter for the <a href=\"http://en.wikipedia.org/wiki/Lund_string_model\" target=\"_blank\">Lund String Model</a> (the most widely used hadronization model).</p> <p>Specifically, it is the $a$ parameter of the Lund symmetric fragmentation function, a suppression parameter for high-energy particles.</p> <h4>Effect</h4> <p>The larger its value, the fewer the number of high-energy particles.</p>"
+},{
+    "name": "StringZ-bLund",
+    "type": "slider",
+    "currentValue": 0.8,
+    "defaultValue": 0.8,
+    "minValue": 0.2,
+    "maxValue": 2.0,
+    "step": 0.01,
+    "description": "<p>Parameter for the <a href=\"http://en.wikipedia.org/wiki/Lund_string_model\" target=\"_blank\">Lund String Model</a> (the most widely used hadronization model).</p> <p>Specifically, it is the $b$ parameter of the Lund symmetric fragmentation function, a suppression parameter for low-energy particles.</p> <h4>Effect</h4> <p>The larger its value, the fewer the number of low-energy particles.</p>"
+},{
+    "name": "StringZ-aExtraDiquark",
+    "type": "slider",
+    "currentValue": 0.5,
+    "defaultValue": 0.5,
+    "minValue": 0.0,
+    "maxValue": 2.0,
+    "step": 0.01,
+    "description": "<p>Parameter for the <a href=\"http://en.wikipedia.org/wiki/Lund_string_model\" target=\"_blank\">Lund String Model</a> (the most widely used hadronization model).</p> <p>Allows a larger $a$ for diquarks, with total $a = a_\\text{Lund} + a_\\text{ExtraDiquark}$.</p> <p>An extra suppression parameter for high-energy baryons.</p> <h4>Effect</h4> <p>The larger its value, the fewer the number of high-energy baryons.</p>"
+},{
+    "name": "StringPT-sigma",
+    "type": "slider",
+    "currentValue": 0.304,
+    "defaultValue": 0.304,
+    "minValue": 0.0,
+    "maxValue": 1.0,
+    "step": 0.01,
+    "description": "<p>Parameter for the <a href=\"http://en.wikipedia.org/wiki/Lund_string_model\" target=\"_blank\">Lund String Model</a> (the most widely used hadronization model).</p> <p>The width $\\sigma$ in the fragmentation process.<p> <p>Since a normal hadron receives $p_T$ contributions for two string breakings, it has a ${\\langle p_x^2 \\rangle}_\\text{had} = {\\langle p_y^2 \\rangle}_\\text{had} = \\sigma^2$, and thus ${\\langle p_T^2 \\rangle}_\\text{had} = 2 \\sigma^2$.</p> <p>It represents how much energy each string break releases.</p> <h4>Effect</h4> <p>For large values, the string breaks are more violent and there are more spherical events and higher-energy particles.</p>"
+},{
+    "name": "StringFlav-probStoUD",
+    "type": "slider",
+    "currentValue": 0.19,
+    "defaultValue": 0.19,
+    "minValue": 0.0,
+    "maxValue": 1.0,
+    "step": 0.01,
+    "description": "<p>Parameter for the <a href=\"http://en.wikipedia.org/wiki/Lund_string_model\" target=\"_blank\">Lund String Model</a> (the most widely used hadronization model).</p> <p>The suppression of $s$ quark production relative to ordinary $u$ or $d$ one, <em>i.e.</em> controls the number of strange quarks (<em>e.g.</em> K mesons with respect to $\\pi$ mesons).</p>"
+},{
+    "name": "StringFlav-mesonUDvector",
+    "type": "slider",
+    "currentValue": 0.62,
+    "defaultValue": 0.62,
+    "minValue": 0.0,
+    "maxValue": 3.0,
+    "step": 0.01,
+    "description": "<p>Parameter for the <a href=\"http://en.wikipedia.org/wiki/Lund_string_model\" target=\"_blank\">Lund String Model</a> (the most widely used hadronization model).</p> <p>The relative production ratio vector/pseudoscalar for light $(u, d)$ mesons. Controls the number of \"vector mesons\" for up and down quarks (<em>e.g.</em> $\\rho$ mesons vs. $\\pi$ mesons).</p>"
+},{
+    "name": "StringFlav-mesonSvector",
+    "type": "slider",
+    "currentValue": 0.725,
+    "defaultValue": 0.725,
+    "minValue": 0.0,
+    "maxValue": 3.0,
+    "step": 0.01,
+    "description": "<p>Parameter for the <a href=\"http://en.wikipedia.org/wiki/Lund_string_model\" target=\"_blank\">Lund String Model</a> (the most widely used hadronization model).</p> <p>The relative production ratio vector/pseudoscalar for strange mesons. Controls the number of \"vector mesons\" for strange quarks (<em>e.g.</em> K* vs. K).</p>"
+},{
+    "name": "StringFlav-probQQtoQ",
+    "type": "slider",
+    "currentValue": 0.09,
+    "defaultValue": 0.09,
+    "minValue": 0.0,
+    "maxValue": 1.0,
+    "step": 0.01,
+    "description": "<p>Parameter for the <a href=\"http://en.wikipedia.org/wiki/Lund_string_model\" target=\"_blank\">Lund String Model</a> (the most widely used hadronization model).</p> <p>The suppression of diquark production relative to quark production, <em>i.e.</em> of baryon relative to meson production. Controls the number of baryons in total (<em>e.g.</em> protons vs. $\\pi$ mesons).</p>"
+},{
+    "name": "StringFlav-probSQtoQQ",
+    "type": "slider",
+    "currentValue": 1.00,
+    "defaultValue": 1.00,
+    "minValue": 0.0,
+    "maxValue": 1.0,
+    "step": 0.01,
+    "description": "<p>Parameter for the <a href=\"http://en.wikipedia.org/wiki/Lund_string_model\" target=\"_blank\">Lund String Model</a> (the most widely used hadronization model).</p> <p>The suppression of strange diquark production relative to light diquark production. Controls the number of strange baryons (<em>e.g.</em> $\\Lambda$ hyperons vs. protons).</p>"
+},{
+    "name": "StringFlav-probQQ1toQQ0",
+    "type": "slider",
+    "currentValue": 0.027,
+    "defaultValue": 0.027,
+    "minValue": 0.0,
+    "maxValue": 1.0,
+    "step": 0.01,
+    "description": "<p>Parameter for the <a href=\"http://en.wikipedia.org/wiki/Lund_string_model\" target=\"_blank\">Lund String Model</a> (the most widely used hadronization model).</p> <p>Controls the number of spin-3/2 baryons (<em>e.g.</em> $\\Delta$ vs. protons).</p>"
+},{
+    "name": "StringFlav-etaSup",
+    "type": "slider",
+    "currentValue": 0.63,
+    "defaultValue": 0.63,
+    "minValue": 0.0,
+    "maxValue": 1.0,
+    "step": 0.01,
+    "description": "<p>Parameter for the <a href=\"http://en.wikipedia.org/wiki/Lund_string_model\" target=\"_blank\">Lund String Model</a> (the most widely used hadronization model).</p> <p>The additional suppression of $\\eta$ production, multiplying the normal production probability. Thus 0 means no $\\eta$ at all are produced, while 1 means full rate.</p>"
+},{
+    "name": "StringFlav-etaPrimeSup",
+    "type": "slider",
+    "currentValue": 0.12,
+    "defaultValue": 0.12,
+    "minValue": 0.0,
+    "maxValue": 1.0,
+    "step": 0.01,
+    "description": "<p>Parameter for the <a href=\"http://en.wikipedia.org/wiki/Lund_string_model\" target=\"_blank\">Lund String Model</a> (the most widely used hadronization model).</p> <p>The additional suppression of $\\eta'$ production, multiplying the normal production probability. Thus 0 means no $\\eta'$ at all are produced, while 1 means full rate.</p>"
+}]

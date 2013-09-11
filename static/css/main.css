@@ -1,0 +1,167 @@
+body {
+    background-image: url('../img/tweed.png');
+    overflow-y: scroll;
+    min-height: 1064px;
+}
+
+#header {
+    padding: 0 10px;
+    background-image: url('../img/45degreee_fabric.png');
+    box-shadow: 0 8px 14px #000;
+}
+
+#header > .logo {
+    display: inline-block;
+    height: 40px;
+}
+
+#header > h1 {
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 1.5em;
+    vertical-align: middle;
+}
+
+#header > h2 {
+    display: inline-block;
+    margin-left: 20px;
+    font-size: 1.5em;
+    color: #c10;
+    vertical-align: middle;
+}
+
+#server-info {
+    padding-bottom: 20px;
+}
+
+#server-info > h1 {
+    font-size: 1.2em;
+    color: #fff;
+}
+
+#server-info #ws-status {
+    display: inline;
+}
+
+#server-info #ws-error {
+    display: none;
+}
+
+.form-fields label {
+    font-weight: bold;
+}
+
+.form-fields select {
+    width: 100%;
+    cursor: auto;
+}
+
+.form-fields input {
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+.value {
+    font-weight: bold;
+    color: #c10;
+}
+
+#control-buttons {
+    margin-top: 20px;
+}
+
+.box > h1 {
+    margin-top: 0;
+    font-size: 1.5em;
+    line-height: normal;
+    border-bottom: 1px solid #666;
+}
+
+.box > h1:not(:first-of-type) {
+    margin-top: 10px;
+}
+
+#analyses > .summary {
+    margin-bottom: 0;
+}
+
+#analyses button {
+    margin-right: 10px;
+}
+
+#analyses-table > tr > td {
+    vertical-align: middle;
+}
+
+#params-accordion {
+    background-color: #F5F5F5;
+    border: 1px solid #E3E3E3;
+    border-radius: 3px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05) inset;
+}
+
+#save-params {
+    margin: 9px;
+}
+
+#pythia-output > .current-line {
+    margin-bottom: 10px;
+}
+
+.output {
+    cursor: pointer;
+}
+
+.output > .output-header {
+    margin: 0;
+    padding: 0;
+    line-height: 20px;
+    font-size: 1em;
+}
+
+.output:hover > .output-header {
+    color: #c10;
+}
+
+.output > .current-line {
+    font-size: .9em;
+    width: 100%;
+    overflow: hidden;
+    white-space: pre;
+}
+
+.console-output {
+    font-size: .8em;
+    white-space: pre;
+    word-break: keep-all;
+    word-wrap: normal;
+    overflow-x: scroll;
+}
+
+.affix {
+    top: 20px;
+}
+
+.ui-slider-horizontal {
+    margin-bottom: 10px;
+}
+
+.ui-slider-horizontal .ui-slider-handle {
+    margin-left: -5px !important;
+    width: 10px !important;
+}
+
+.red {
+    color: #c10;
+}
+
+.more {
+    display: none;
+}
+
+.modal-body h4 {
+    color: #c10;
+}

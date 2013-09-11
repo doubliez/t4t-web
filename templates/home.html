@@ -1,0 +1,276 @@
+{% extends "base.html" %}
+
+{% block title %}{{ title }}{% end %}
+
+{% block body %}
+  <header id="header">
+    <img class="logo" alt="LHC Test4Theory" src="static/img/logo.png" />
+    <h1 data-step="1" data-intro="This seems to be your first time using this interface. This tour will guide you through the different components of this interface." data-position="bottom">{{ header['title'] }}</h1>
+    <h2>{{ header['headline'] }}</h2>
+  </header>
+
+  <div class="container-fluid">
+    <div id="server-info" class="row-fluid">
+      <h1>Rivet version: <span class="rivet-version">{{ rivetVersion }}</span></h1>
+      <p><span id="ws-status" class="label label-info">Connecting to the server</span> <span id="ws-error" class="label label-important">&nbsp;</span></p>
+    </div>
+    <div class="row-fluid">
+      <div class="span3">
+        <div data-spy="affix" data-offset-top="150" data-clampedwidth=".span3">
+          <div class="well well-small" data-step="2" data-intro="Here is where you control the high-energy physics simulations. You can choose an analysis to run and specify the number of events between each update of the results. Click on 'Analysis' to get information about the selected analysis." data-position="right">
+            <fieldset class="form-fields">
+              <div id="ana-label" class="clearfix" style="cursor: pointer;">
+                <label class="pull-left">Analysis</label>
+                <i class="more icon-info-sign pull-right"></i>
+              </div>
+              <select id="analysis">
+              {% for analysis in analyses %}
+                <option value="{{ analysis }}">{{ analysis }}</option>
+              {% end %}
+              </select>
+              <div id="histo-interval">
+                <label>Histo update interval = <span class="value">500</span></label>
+              </div>
+              <div id="control-buttons">
+                <button type="button" id="simulation-control" class="btn btn-primary">Run</button>
+                <button type="button" id="simulation-stop" class="btn btn-danger" disabled="disabled">Stop</button>
+              </div>
+            </fieldset>
+          </div>
+          <div id="parameters">
+            <fieldset class="form-fields">
+              <div id="params-accordion" class="accordion" data-step="3" data-intro="This block allows you to change the parameters used by the event generator. A description for each parameter is provided when you click on their names." data-position="right">
+                <div class="accordion-group">
+                  <div class="accordion-heading">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#params-accordion" href="#beamParameters">Beam parameters</a>
+                  </div>
+                  <div id="beamParameters" class="accordion-body collapse">
+                    <div class="accordion-inner">
+                      <div id="Beams-idA">
+                        <div class="clearfix" style="cursor: pointer;">
+                          <label class="pull-left">Beams:idA = <span class="value">2212</span></label>
+                          <i class="more icon-question-sign pull-right"></i>
+                        </div>
+                      </div>
+                      <div id="Beams-idB">
+                        <div class="clearfix" style="cursor: pointer;">
+                          <label class="pull-left">Beams:idB = <span class="value">2212</span></label>
+                          <i class="more icon-question-sign pull-right"></i>
+                        </div>
+                      </div>
+                      <div id="Beams-eCM">
+                        <div class="clearfix" style="cursor: pointer;">
+                          <label class="pull-left">Beams:eCM = <span class="value">14000</span></label>
+                          <i class="more icon-question-sign pull-right"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-group">
+                  <div class="accordion-heading">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#params-accordion" href="#stringFragmentation">String fragmentation</a>
+                  </div>
+                  <div id="stringFragmentation" class="accordion-body collapse">
+                    <div class="accordion-inner">
+                      <div id="StringZ-aLund">
+                        <div class="clearfix" style="cursor: pointer;">
+                          <label class="pull-left">StringZ:aLund = <span class="value">0.55</span></label>
+                          <i class="more icon-question-sign pull-right"></i>
+                        </div>
+                      </div>
+                      <div id="StringZ-bLund">
+                        <div class="clearfix" style="cursor: pointer;">
+                          <label class="pull-left">StringZ:bLund = <span class="value">0.95</span></label>
+                          <i class="more icon-question-sign pull-right"></i>
+                        </div>
+                      </div>
+                      <div id="StringZ-aExtraDiquark">
+                        <div class="clearfix" style="cursor: pointer;">
+                          <label class="pull-left">StringZ:aExtraDiquark = <span class="value">1.0</span></label>
+                          <i class="more icon-question-sign pull-right"></i>
+                        </div>
+                      </div>
+                      <div id="StringPT-sigma">
+                        <div class="clearfix" style="cursor: pointer;">
+                          <label class="pull-left">StringPT:sigma = <span class="value">0.275</span></label>
+                          <i class="more icon-question-sign pull-right"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-group">
+                  <div class="accordion-heading">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#params-accordion" href="#stringBreakupFlavor">String breakup flavor</a>
+                  </div>
+                  <div id="stringBreakupFlavor" class="accordion-body collapse">
+                    <div class="accordion-inner">
+                      <div id="StringFlav-probStoUD">
+                        <div class="clearfix" style="cursor: pointer;">
+                          <label class="pull-left">StringFlav:probStoUD = <span class="value">0.20</span></label>
+                          <i class="more icon-question-sign pull-right"></i>
+                        </div>
+                      </div>
+                      <div id="StringFlav-mesonUDvector">
+                        <div class="clearfix" style="cursor: pointer;">
+                          <label class="pull-left">StringFlav:mesonUDvector = <span class="value">0.45</span></label>
+                          <i class="more icon-question-sign pull-right"></i>
+                        </div>
+                      </div>
+                      <div id="StringFlav-mesonSvector">
+                        <div class="clearfix" style="cursor: pointer;">
+                          <label class="pull-left">StringFlav:mesonSvector = <span class="value">0.7</span></label>
+                          <i class="more icon-question-sign pull-right"></i>
+                        </div>
+                      </div>
+                      <div id="StringFlav-probQQtoQ">
+                        <div class="clearfix" style="cursor: pointer;">
+                          <label class="pull-left">StringFlav:probQQtoQ = <span class="value">0.085</span></label>
+                          <i class="more icon-question-sign pull-right"></i>
+                        </div>
+                      </div>
+                      <div id="StringFlav-probSQtoQQ">
+                        <div class="clearfix" style="cursor: pointer;">
+                          <label class="pull-left">StringFlav:probSQtoQQ = <span class="value">1.00</span></label>
+                          <i class="more icon-question-sign pull-right"></i>
+                        </div>
+                      </div>
+                      <div id="StringFlav-probQQ1toQQ0">
+                        <div class="clearfix" style="cursor: pointer;">
+                          <label class="pull-left">StringFlav:probQQ1toQQ0 = <span class="value">0.035</span></label>
+                          <i class="more icon-question-sign pull-right"></i>
+                        </div>
+                      </div>
+                      <div id="StringFlav-etaSup">
+                        <div class="clearfix" style="cursor: pointer;">
+                          <label class="pull-left">StringFlav:etaSup = <span class="value">0.68</span></label>
+                          <i class="more icon-question-sign pull-right"></i>
+                        </div>
+                      </div>
+                      <div id="StringFlav-etaPrimeSup">
+                        <div class="clearfix" style="cursor: pointer;">
+                          <label class="pull-left">StringFlav:etaPrimeSup = <span class="value">0.085</span></label>
+                          <i class="more icon-question-sign pull-right"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <button type="button" id="save-params" class="btn" disabled="disabled">Save parameters</button>
+                <button type="button" id="reload-params" class="btn">Reload</button>
+                <button type="button" id="reset-params" class="btn">Reset</button>
+              </div>
+            </fieldset>
+          </div>
+          <div id="outputs" class="well well-small" data-step="4" data-intro="You can see here the status of the simulation as well as the console output of PYTHIA and Rivet." data-position="right">
+            <div id="pythia-output" class="output">
+              <h1 class="output-header">PYTHIA</h1>
+              <div class="current-line">Not running</div>
+            </div>
+            <div id="rivet-output" class="output">
+              <h1 class="output-header">Rivet</h1>
+              <div class="current-line">Not running</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="span9">
+        <div id="analyses" class="box well well-small" data-step="5" data-intro="The analyses you run will be displayed here. When you run an analysis more than once with different parameters, you'll be able to compare the graphs produced by the different runs." data-position="left">
+          <h1>Analyses summary</h1>
+          <table class="table table-bordered summary">
+            <thead>
+              <tr>
+                <th>Analysis</th>
+                <th>Run number</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="analyses-table">
+            
+            </tbody>
+          </table>
+          <div class="clearfix"></div>
+          <h1>Tools</h1>
+          <button type="button" id="typeset-math" class="btn">Re-typeset math</button>
+        </div>
+        <div id="histograms" class="box well well-small" data-step="6" data-intro="The results, i.e. the histograms, will be appended here for each analysis you run, and updated at the interval you specified earlier." data-position="left">
+          <h1>Histograms</h1>
+          <div class="row-fluid">
+            <div class="span6">
+              <h4>How does it work?</h4>
+              <p>Histograms are displayed in this section. When a new analysis is run, a new subsection is created with the corresponding histograms. Just after the <strong>Run</strong> button is hit, no histograms will be shown. The first histograms are available after the number of events specified by <strong>Histo update interval</strong>.</p>
+              <ul>
+                <li>The <strong>black</strong> curve represents the experimental data coming from the measures made at CERN using the LHC.</li>
+                <li>The <strong style="color: #1f77b4;">blue</strong> curve is generated by the simulation and you will see it converge (or not, depending on the parameters you chose) towards the reference data.</li>
+              </ul>
+              <p>After running a simulation several times with different parameters, you can compare the different runs by clicking on the corresponding <strong>Compare runs</strong> button in the above table and select which runs you want to compare.</p>
+            </div>
+            <div class="span6">
+              <h4>Your goal!</h4>
+              <p>Under each graph and for each run, you will see a value named $\chi^2$ (chi-squared). This is a statistical value which represents how well the data coming from the model fits the experimental data. It is often difficult to tell from the graph whether the model is a good fit or not for the reference data. That is why this value is used to quantify the goodness of fit of the model.</p>
+              <p>Your goal is to play with the values of the parameters to find those resulting in the best fit of the data, <em>i.e.</em> those providing the lowest $\chi^2$ value. The threshold for a model to be considered a good fit is $\chi^2 \lt 1$.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer id="footer">
+  
+  </footer>
+
+  <div id="params-changed-modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="params-changed-modal-title" aria-hidden="true" data-backdrop="static">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+      <h3 id="params-changed-modal-title">Parameters have changed</h3>
+    </div>
+    <div class="modal-body">
+      <p>Attempting to run the simulation with unsaved parameters.</p>
+      <p>Save parameters and run simulation?</p>
+    </div>
+    <div class="modal-footer">
+      <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+      <button class="btn btn-primary" id="save-params-modal">Save &amp; Run</button>
+    </div>
+  </div>
+  <div id="pythia-modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="pythia-modal-title" aria-hidden="true">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+      <h3 id="pythia-modal-title">PYTHIA output</h3>
+    </div>
+    <div class="modal-body">
+      <pre id="pythia-full-output" class="console-output">&nbsp;</pre>
+    </div>
+    <div class="modal-footer">
+      <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+    </div>
+  </div>
+  <div id="rivet-modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="rivet-modal-title" aria-hidden="true">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+      <h3 id="rivet-modal-title">Rivet output</h3>
+    </div>
+    <div class="modal-body">
+      <pre id="rivet-full-output" class="console-output">&nbsp;</pre>
+    </div>
+    <div class="modal-footer">
+      <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+    </div>
+  </div>
+  <div id="analysis-modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="analysis-modal-title" aria-hidden="true">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+      <h3 id="analysis-modal-title">Analysis details</h3>
+    </div>
+    <div id="analysis-details" class="modal-body"></div>
+    <div class="modal-footer">
+      <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+    </div>
+  </div>
+
+  <!-- Parameters modal information windows -->
+  <div id="param-descriptions"></div>
+{% end %}
