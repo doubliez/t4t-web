@@ -1,6 +1,10 @@
 # Citizen Science: CERN LHC on the web
 ## Web server and front-end for PYTHIA 8 and Rivet 2.0.0
 
+![UI](screenshots/ui.png)
+
+![histograms](screenshots/ana_histos.png)
+
 ### Requirements
 
 The basic requirements to run the Tornado Web Server for this application are the following:
